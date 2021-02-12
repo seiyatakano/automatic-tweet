@@ -1,4 +1,6 @@
 tweepy==3.9.0
+pandas==1.2.2
+numpy==1.16.4
 python-twitter==3.1.0
 requests-oauthlib==0.6.2
 absl-py==0.9.0
@@ -31,8 +33,6 @@ python-dotenv==0.14.0
 requests>=2.24.0
 scipy==1.4.1
 six==1.15.0
-tensorboard==2.3.0
-tensorflow==2.3.0
 termcolor==1.1.0
 urllib3>=1.25.10
 Werkzeug==1.0.1
