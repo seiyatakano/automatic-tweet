@@ -16,4 +16,4 @@ auth=tweepy.OAuthHandler(CK,CS)
 auth.set_access_token(AT,AS)
 api=tweepy.API(auth)
 
-api.update_status('first tweet from python\n\nseiya')
+api.update_status('初めての投稿です！by python')
