@@ -41,10 +41,11 @@ def get_hour():
 
 while True:
     nowHour = get_hour()
-
     if nowHour==6 or nowHour==12 or nowHour==18 or nowHour==21:
         do_tweet()
         time.sleep(3600)
     elif nowHour==23:
         todayTweetId=[]
+        time.sleep(3600)
+    else:
         time.sleep(3600)
