@@ -18,6 +18,7 @@ api=tweepy.API(auth)
 todayTweetId=[]
 
 def do_tweet():
+    pd.set_option('display.max_colwidth', None)
     tweets_df=pd.read_csv('./tweets.csv')
     tweetId=np.random.randint(0, len(tweets_df), 1)
     while tweetId in todayTweetId:
@@ -39,7 +40,7 @@ def get_hour():
     return nowHour
 
 nowHour = get_hour()
-print(nowHour)
+
 if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour==15:
     do_tweet()
 elif nowHour==23:
