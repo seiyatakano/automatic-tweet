@@ -40,7 +40,7 @@ def get_hour():
 
 nowHour = get_hour()
 
-if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour=14:
+if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour==14:
     do_tweet()
 elif nowHour==23:
     todayTweetId=[]
