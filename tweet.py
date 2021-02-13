@@ -17,12 +17,6 @@ auth.set_access_token(AT,AS)
 api=tweepy.API(auth)
 todayTweetId=[]
 
-nowHour=get_hour()
-if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour==14:
-    do_tweet()
-elif nowHour==23:
-    todayTweetId=[]
-    
 def do_tweet():
     tweets_df=pd.read_csv('./tweets.csv')
     tweetId=np.random.randint(0, len(tweets_df), 1)
@@ -43,3 +37,10 @@ def get_hour():
     times=re.split('[-:. ]',now)
     nowHour=int(times[3])
     return nowHour
+
+nowHour = get_hour()
+
+if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour=14:
+    do_tweet()
+elif nowHour==23:
+    todayTweetId=[]
