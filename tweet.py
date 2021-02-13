@@ -39,7 +39,7 @@ def get_hour():
     return nowHour
 
 nowHour = get_hour()
-
+print(nowHour)
 if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour==14:
     do_tweet()
 elif nowHour==23:
