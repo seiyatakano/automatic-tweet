@@ -17,34 +17,35 @@ auth.set_access_token(AT,AS)
 api=tweepy.API(auth)
 
 todayTweetId=[]
+api.update_status('seiyatakano.\n\nIts for the first time from python')
 
-def do_tweet():
-    tweets_df=pd.read_csv('./tweets.csv')
-    tweetId=np.random.randint(0, len(tweets_df), 1)
-    while tweetId in todayTweetId:
-        tweetId=np.random.randint(0,len(tweets_df),1)
-    todayTweetId.append(tweetId)
+# def do_tweet():
+#     tweets_df=pd.read_csv('./tweets.csv')
+#     tweetId=np.random.randint(0, len(tweets_df), 1)
+#     while tweetId in todayTweetId:
+#         tweetId=np.random.randint(0,len(tweets_df),1)
+#     todayTweetId.append(tweetId)
     
-    tweet=str(tweets_df.loc[tweetId,'tweets'])
-    tweet=re.sub(' ','',tweet)
-    for i in range(0,3):
-        tweet=re.sub('^[0-9]','',tweet)
-    tweet=re.sub('Name:tweets,dtype:object$','',tweet)
-    tweet=tweet.replace('\\n','\n')
-    api.update_status(tweet)
+#     tweet=str(tweets_df.loc[tweetId,'tweets'])
+#     tweet=re.sub(' ','',tweet)
+#     for i in range(0,3):
+#         tweet=re.sub('^[0-9]','',tweet)
+#     tweet=re.sub('Name:tweets,dtype:object$','',tweet)
+#     tweet=tweet.replace('\\n','\n')
+#     api.update_status(tweet)
     
-def get_hour():
-    now=str(datetime.datetime.now())
-    times=re.split('[-:. ]',now)
-    nowHour=int(times[3])
-    return nowHour
+# def get_hour():
+#     now=str(datetime.datetime.now())
+#     times=re.split('[-:. ]',now)
+#     nowHour=int(times[3])
+#     return nowHour
 
-while True:
-    nowHour=get_hour()
+# while True:
+#     nowHour=get_hour()
     
-    if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour==13:
-        do_tweet()
-    elif nowHour==23:
-        todayTweetId=[]
+#     if nowHour==7 or nowHour==12 or nowHour==18 or nowHour==21 or nowHour==14:
+#         do_tweet()
+#     elif nowHour==23:
+#         todayTweetId=[]
         
-    time.sleep(3600)
+#     time.sleep(3600)
