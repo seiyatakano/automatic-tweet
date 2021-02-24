@@ -24,7 +24,6 @@ def do_tweet():
     while tweetId in todayTweetId:
         tweetId=np.random.randint(0,len(tweets_df),1)
     todayTweetId.append(tweetId)
-    
     tweet=str(tweets_df.loc[tweetId,'tweets'])
     tweet=re.sub(' ','',tweet)
     for i in range(0,3):
@@ -39,13 +38,10 @@ def get_hour():
     nowHour=int(times[3])
     return nowHour
 
-while True:
+for i in range(6,22):
     nowHour = get_hour()
     if nowHour==6 or nowHour==12 or nowHour==18 or nowHour==21:
         do_tweet()
-        time.sleep(3600)
-    elif nowHour==23:
-        todayTweetId=[]
-        time.sleep(3600)
+        time.sleep(3630)
     else:
-        time.sleep(3600)
+        time.sleep(3630)
